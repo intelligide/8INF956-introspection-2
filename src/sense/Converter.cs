@@ -2,12 +2,12 @@ using System;
 
 namespace sense
 {
-    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public class ConverterAttribute : Attribute
     {
-        EUnit InUnit;
+        public EUnit InUnit { get; private set; }
 
-        EUnit OutUnit;
+        public EUnit OutUnit { get; private set; }
 
         public ConverterAttribute(EUnit inUnit, EUnit outUnit)
         {
