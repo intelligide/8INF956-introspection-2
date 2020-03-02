@@ -1,8 +1,20 @@
 
+using System;
+
 namespace sense
 {
     public class Visualizer
     {
-        float Sense();
+        private Sensor sensor;
+
+        public Visualizer(Sensor sensor)
+        {
+            this.sensor = sensor;
+        }
+
+        public void Update()
+        {
+            Console.WriteLine(sensor.Sense());
+        }
     }
 }
